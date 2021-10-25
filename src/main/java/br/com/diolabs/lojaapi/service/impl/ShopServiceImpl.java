@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +33,9 @@ import br.com.diolabs.lojaapi.service.ServiceStrategy;
  * {@link ShopMapper} para transferir os dados entre processos sem que ambos DTO
  * e model não precisem se conhecer.</li>
  * 
- * 
+ * <li>Demonstração do padrão de projeto Proxy - usando a anotação {@link Transactional} o Spring
+ * cria uma classe, o proxy, para controlar o acesso de outros objetos.</li>
+ *   
  */
 @Service
 public class ShopServiceImpl implements ServiceStrategy<ShopDTO, Integer> {
@@ -59,6 +63,7 @@ public class ShopServiceImpl implements ServiceStrategy<ShopDTO, Integer> {
 
  
     @Override    
+    @Transactional
     public ShopDTO save(ShopDTO shopToSave) {
         Shop shop = shopMapper.toModel(shopToSave);
 
@@ -71,6 +76,7 @@ public class ShopServiceImpl implements ServiceStrategy<ShopDTO, Integer> {
     }
 
     @Override
+    @Transactional
     public void deleteById(Integer id) {
         ShopDTO shopToDelete = this.findById(id);
 
@@ -79,6 +85,7 @@ public class ShopServiceImpl implements ServiceStrategy<ShopDTO, Integer> {
         shopRepository.delete(shopMapper.toModel(shopToDelete));
     }
 
+    @Transactional
     @Override
     public ShopDTO update(Integer id, ShopDTO shopToUpdate) {
         this.findById(id);

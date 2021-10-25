@@ -10,7 +10,7 @@ Foram utilizados:
 * Criação de modelo de dados para o mapeamento de entidades em bancos de dados
 * Desenvolvimento de operações de gerenciamento (cadastro, leitura, atualização e remoção)
 * Relação de cada uma das operações acima com o padrão arquitetural REST
-* Utilização e implementações de alguns padrôes de projeto : Singleton, Builder, Facade, DTO, Strategy
+* Utilização e implementações de alguns padrôes de projeto : Singleton, Builder, Facade, DTO, Strategy,Proxy
 * Integração com API externa - https://www.fruityvice.com/doc/index.html#api-GET
 
 
@@ -97,7 +97,7 @@ Links úteis:
 * [Referência do VSCode para download](https://code.visualstudio.com/)
 * [Site oficial do Spring](https://spring.io/)
 * [Site oficial do Spring Initialzr, para setup do projeto](https://start.spring.io/)
-* [Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
+* [Design Patterns](https://java-design-patterns.com/) / (https://en.wikipedia.org/wiki/Design_Patterns)
 * [Site oficial do GIT](https://git-scm.com/)
 * [Site oficial do GitHub](http://github.com/)
 * [Documentação oficial do Lombok](https://projectlombok.org/)
